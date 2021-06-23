@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title%} Registration {% endblock title%}
+ {% block nav1 %}<li class="nav-item "> {% endblock nav1%} 
+ {% block nav2 %}<li class="nav-item"> {% endblock nav2%} 
+ {% block nav3 %}<li class="nav-item active"> {% endblock nav3%} 
+ {% block nav4 %}<li class="nav-item"> {% endblock nav4%} 
+ {% block nav5 %}<li class="nav-item"> {% endblock nav5%} 
+{% block div %} 
+{% if messages %}
+ {% for message in messages %}
+<div class="alert alert-{{ message.tags }} d-flex align-items-center alert-dismissible fade show" role="alert">
+
+  <div>
+  {{ message }}
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+<br><br>
+<div class='container bg-white'>
+<form method="POST" action="/sreg">
+ {% csrf_token %}
+<br><br>
+<a href="/sl">View the Student Lists</a>
+<center><h3 >Student Registration </h3></center>
+<div class="m-3">
+    <label for="exampleInputEmail1" class="form-label">Student Name</label>
+    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="m-3">
+    <label for="exampleInputEmail1" class="form-label">USN</label>
+    <input type="text" name="usn" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="m-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="m-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="m-3">
+    <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+    <input type="password" name="pass" class="form-control" id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+  <br><br>
+</form>
+
+</div>
+
+{% endblock div %}

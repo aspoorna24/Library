@@ -1,0 +1,43 @@
+ {% extends 'base.html' %}
+{% block title%} Add New Book {% endblock title%}
+ {% block nav1 %} <li class="nav-item"> {% endblock nav1%} 
+ {% block nav2 %}<li class="nav-item active">{% endblock nav2%} 
+ {% block nav3 %}<li class="nav-item"> {% endblock nav3%} 
+ {% block nav4 %}<li class="nav-item"> {% endblock nav4%} 
+ {% block nav5 %}<li class="nav-item"> {% endblock nav5%} 
+{% block div%} 
+
+{% if messages %}
+ {% for message in messages %}
+<div class="alert alert-{{ message.tags }} d-flex align-items-center alert-dismissible fade show" role="alert">
+
+  <div>
+  {{ message }}
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+<br><br>
+<div class='container bg-white'>
+<form method="POST" action="/insertbook" >
+ {% csrf_token %}
+<br><br>
+<a href="/book"> Back </a>
+<center><h3 style="color:red"> Add New Book </h3></center>
+<div class="m-3">
+    <label for="exampleInputEmail1" class="form-label">Book Name</label>
+    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="m-3">
+    <label for="exampleInputEmail1" class="form-label">Book Id</label>
+    <input type="text" name="bkid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="m-3">
+    <label for="exampleInputEmail1" class="form-label">author</label>
+    <input type="text" name="aut" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <button type="submit" class="btn btn-info">Add</button>
+  <br><br>
+</form>
+
+{% endblock div%}

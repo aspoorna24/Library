@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title%} Home {% endblock title%}
+ {% block nav1 %}<li class="nav-item active"> {% endblock nav1%} 
+ {% block nav2 %}<li class="nav-item"> {% endblock nav2%} 
+ {% block nav3 %}<li class="nav-item dropdown"> {% endblock nav3%} 
+  {% block nav4 %}<li class="nav-item"> {% endblock nav4%} 
+   {% block nav5 %}<li class="nav-item"> {% endblock nav5%} 
+    {% block link %}  <link rel="stylesheet" href="static/css/style2.css"> {%endblock link%}
+{% block div%} 
+
+<img src="https://patch.com/img/cdn20/users/22949620/20180116/120056/styles/raw/public/processed_images/sebas-ribas-310260-1516122045-9292.jpg" width="100%" height="500px">
+<br><br>
+
+<div class="container bg-white "> 
+<center><img src="static/img/logo.jpg" height="50" width="50"><br><br>
+<h2 style:'font-family: "Times New Roman", Times, serif;'>Library</h2>
+</center>
+<p style="text-align: justify;padding:10px;"><b>
+This Library Management System wil{% csrf_token %}l be used for the Librarian to check out the activities of Library. The Issue, and Submition of the books will also be
+recorded. Librarian had to add all the Students who are eligible to access the book and Has to maintain the issu and the resubmitions of the book.If the is any 
+problem in the server contact the head.</b>
+</p>
+
+</div >
+
+
+
+ {% endblock div%}

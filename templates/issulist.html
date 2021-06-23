@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title%} IssueList {% endblock title%}
+ {% block nav1 %}<li class="nav-item "> {% endblock nav1%} 
+ {% block nav2 %}<li class="nav-item"> {% endblock nav2%} 
+ {% block nav3 %}<li class="nav-item "> {% endblock nav3%} 
+ {% block nav4 %}<li class="nav-item active"> {% endblock nav4%} 
+ {% block nav5 %}<li class="nav-item"> {% endblock nav5%} 
+{% block div %}
+
+<br><br>
+<div class='container bg-white'>
+<br><br>
+<center><h3 style="color:red">Issued Books</h3></center>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Book Name</th>
+        <th>USN</th>
+        <th>Book Id</th>
+        <th>date</th>
+      </tr>
+    </thead>
+     <tbody>
+     {% for s in iss %}
+     <tr>
+     
+        <td>{{s.book_name}}</td>
+        <td>{{s.usn}}</td>
+        <td>{{s.book_id}}</td>
+        <td>{{s.date}}</td>
+      </tr>
+      {% endfor %}
+     </tbody>
+
+</table>
+
+<br><br>
+</div>
+
+
+
+{% endblock div %}

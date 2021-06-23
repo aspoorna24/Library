@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+   <link rel="icon" href="static/img/logo.jpg" type="image/icon type">
+<title>Student Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body style="background: #dedede;">
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <a class="navbar-brand" href="#">
+    <img src="static/img/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+   <b>Library</b>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+     <li class="nav-item ">
+        <a class="nav-link" href="/main">    </a>
+      </li>
+      </ul>
+    <form class="form-inline my-2 my-lg-0" action='/mains' method='post'>
+    {% csrf_token %}
+        <span class="nav-link" style="color:#ee5253;" ><b>{{user}}</b></span>
+      <button class="btn btn-outline-primary" type="submit"><i class="fa fa-power-off" style="font-size:24px"></i> <b>Logout</b></button>
+    </form>
+  </div>
+</nav>
+<br><br>
+<div class="container bg-white">
+<br><br>
+<center><h3 style="color:red">Issued Books</h3></center>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Book Name</th>
+        <th>Book Id</th>
+        <th>date</th>
+      </tr>
+    </thead>
+     <tbody>
+     {% for s in iss %}
+     
+     <tr>
+        <td>{{s.book_name}}</td>
+        <td>{{s.book_id}}</td>
+        <td>{{s.date}}</td>
+      </tr>
+      {% endfor %}
+     </tbody>
+
+</table>
+
+<br><br>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title%} Book {% endblock title%}
+ {% block nav1 %} <li class="nav-item"> {% endblock nav1%} 
+ {% block nav2 %}<li class="nav-item active">{% endblock nav2%} 
+ {% block nav3 %}<li class="nav-item"> {% endblock nav3%} 
+  {% block nav4 %}<li class="nav-item"> {% endblock nav4%} 
+   {% block nav5 %}<li class="nav-item"> {% endblock nav5%} 
+{% block div%} 
+<br><br>
+<div class="container bg-white">  
+<br><br>
+<a href="/book"> Back </a>
+<center>
+
+<h3 style="color:red">Book List</h3></center>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Book Id</th>
+        <th>Author</th>
+      </tr>
+    </thead>
+     <tbody>
+     {% for s in book %}
+     <tr>
+        <td>{{s.book_name}}</td>
+        <td>{{s.book_id}}</td>
+        <td>{{s.author}}</td>
+      </tr>
+      {% endfor %}
+     </tbody>
+
+</table>
+
+<br><br>
+</div>
+
+
+
+{% endblock div %}
