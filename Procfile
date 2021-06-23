@@ -1,1 +1,1 @@
-web: gunicorn CCMS.wsgi --log-file -
+web: gunicorn LIBRARY_MANAGEMENT_SYSTEM.wsgi --log-file -
